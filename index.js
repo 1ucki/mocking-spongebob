@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   console.log(api)
 })
 
-app.listen(process.env.PORT || 80) // hier isser port, dann einfach 80, is standard port 4 website zeuch
+app.listen(process.env.PORT || 3001) // hier isser port, dann einfach 80, is standard port 4 website zeuch
 // HEROKU will sich den port selber holen SAGT DAS INTERNET okay nice
 
 bot.start(ctx => ctx.reply('WeLcOmE'))
