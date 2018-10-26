@@ -11,6 +11,7 @@ app.set('json spaces', 2) // nice formatting of json u know
 
 app.get('/', (req, res) => {
   res.json(api) // response bei / mit dem api object in json format
+  console.log(api)
 })
 
 app.listen(process.env.PORT || 80) // hier isser port, dann einfach 80, is standard port 4 website zeuch
@@ -23,7 +24,7 @@ bot.on('text', (ctx) => {
 
   const msg = ctx.update.message.text
   const chars = msg.split('')
-  const newChars = []
+  const newChars = [] // SCHEI? AUF IGNORE ERSTMAKL !!!!!!!!!!!!!!!
   
   api.msg = msg
   api.from = ctx.message.from.username // irgendwie sowat mom chekin docs oskar sagt geht so ned
