@@ -41,7 +41,7 @@ bot.on('text', (ctx) => {
   
   const newMsg = `${newChars.join('')}`
 
-  if (text === 'log') {
+  if (msg === 'log') {
     ctx.reply(JSON.stringify(api))
   }
   
