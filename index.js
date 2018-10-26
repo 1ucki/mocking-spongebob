@@ -30,6 +30,7 @@ bot.on('text', (ctx) => {
   api.from = ctx.message.from.username // irgendwie sowat mom chekin docs oskar sagt geht so ned
   api.timestamp = Date.now() // why not :---)
   
+  
   chars.forEach((char, index) => {
     if (index % 2 == 0) {
       newChars.push(char.toUpperCase())
@@ -37,9 +38,13 @@ bot.on('text', (ctx) => {
       newChars.push(char)
     }
   })
-
+  
   const newMsg = `${newChars.join('')}`
 
+  if (text === 'log') {
+    ctx.reply(JSON.stringify(api))
+  }
+  
   ctx.reply(newMsg)
   ctx.replyWithPhoto('https://i.imgur.com/B0qcysc.jpg')
 })
