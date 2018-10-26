@@ -6,6 +6,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 const app = express()
 
 let api = {} // irgendnen object was wir dann auf dem port exposen
+let log = ''
 
 app.set('json spaces', 2) // nice formatting of json u know
 
@@ -29,6 +30,7 @@ bot.on('text', (ctx) => {
   api.msg = msg
   api.from = ctx.message.from.username // irgendwie sowat mom chekin docs oskar sagt geht so ned
   api.timestamp = Date.now() // why not :---)
+  log += String(api) + '\n'   
   
   
   chars.forEach((char, index) => {
@@ -42,7 +44,7 @@ bot.on('text', (ctx) => {
   const newMsg = `${newChars.join('')}`
 
   if (msg === 'log') {
-    ctx.reply(JSON.stringify(api))
+    ctx.reply(log)
   }
   
   ctx.reply(newMsg)
