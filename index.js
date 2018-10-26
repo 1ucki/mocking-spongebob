@@ -10,8 +10,8 @@ let api = {} // irgendnen object was wir dann auf dem port exposen
 app.set('json spaces', 2) // nice formatting of json u know
 
 app.get('/', (req, res) => {
-  res.json(api) // response bei / mit dem api object in json format
   console.log(api)
+  res.json(api) // response bei / mit dem api object in json format
 })
 
 app.listen(process.env.PORT || 3001) // hier isser port, dann einfach 80, is standard port 4 website zeuch
