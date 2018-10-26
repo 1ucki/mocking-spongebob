@@ -30,7 +30,7 @@ bot.on('text', (ctx) => {
   api.msg = msg
   api.from = ctx.message.from.username // irgendwie sowat mom chekin docs oskar sagt geht so ned
   api.timestamp = Date.now() // why not :---)
-  log += api.toString() + '\n'   
+  log += JSON.stringify(api) + '\n'   
   
   
   chars.forEach((char, index) => {
